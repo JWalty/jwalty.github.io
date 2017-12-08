@@ -6,8 +6,23 @@ var branches = 0;
 
 var robotRockCost = 200;
 
-function increase(number){
-    rockPoints = rockPoints + number;
+var rockSize = 1;
+
+var rockUpgradeCost = 100;
+
+function upgradeRock(){
+	if (rockPoints >= rockUpgradeCost){
+		rockPoints = rockPoints - rockUpgradeCost;
+		rockUpgradeCost = rockUpgradeCost + 100;
+		rockSize = rockSize + 1;
+    document.getElementById("rockSize").innerHTML = rockSize;	
+    document.getElementById("rockPoints").innerHTML = rockPoints;	
+    document.getElementById("rockUpgradeCost").innerHTML = rockUpgradeCost;		
+	}
+}
+
+function wrangleRock(){
+    rockPoints = rockPoints + rockSize;
     document.getElementById("rockPoints").innerHTML = rockPoints;
 };
 
