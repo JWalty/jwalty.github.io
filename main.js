@@ -10,6 +10,8 @@ var rockSize = 1;
 
 var rockUpgradeCost = 100;
 
+var sharpRock = 0;
+
 function disable(){
 		document.getElementById("upgradeRock").disabled = true;
 		document.getElementById("buyRobotRock").disabled = true;		
@@ -32,9 +34,16 @@ function upgradeRock(){
 function wrangleRock(){
     rockPoints = rockPoints + rockSize;
     document.getElementById("rockPoints").innerHTML = rockPoints;
+	
 	if (rockPoints >= rockUpgradeCost) {
 		document.getElementById("upgradeRock").disabled = false;
 	}
+	
+	var x = Math.floor((Math.random() * 100) + 1);
+    if (x <= rockSize) {
+    sharpRock = sharpRock + 1;
+    document.getElementById("sharpRock").innerHTML = sharpRock;	  
+    }
 }
 
 function set(){
@@ -70,5 +79,4 @@ function autoRock(){
 
 window.setInterval(function(){
 	autoRock();
-	afford();
 }, 1000);
