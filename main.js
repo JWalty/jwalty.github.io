@@ -16,6 +16,7 @@ function increase(number){
 
 function shakeTree() {
 	branches = branches + 1;
+	cheater = cheater + 1;
     document.getElementById("branches").innerHTML = branches;
 }
 
