@@ -10,6 +10,11 @@ var rockSize = 1;
 
 var rockUpgradeCost = 100;
 
+function disable(){
+		document.getElementById("upgradeRock").disabled = true;
+		document.getElementById("buyRobotRock").disabled = true;		
+}	
+
 function upgradeRock(){
 	if (rockPoints >= rockUpgradeCost){
 		rockPoints = rockPoints - rockUpgradeCost;
@@ -17,18 +22,31 @@ function upgradeRock(){
 		rockSize = rockSize + 1;
     document.getElementById("rockSize").innerHTML = rockSize;	
     document.getElementById("rockPoints").innerHTML = rockPoints;	
-    document.getElementById("rockUpgradeCost").innerHTML = rockUpgradeCost;		
+    document.getElementById("rockUpgradeCost").innerHTML = rockUpgradeCost;	
+			if (rockPoints < rockUpgradeCost) {
+		document.getElementById("upgradeRock").disabled = true;
+		}
 	}
 }
 
 function wrangleRock(){
     rockPoints = rockPoints + rockSize;
     document.getElementById("rockPoints").innerHTML = rockPoints;
-};
+	if (rockPoints >= rockUpgradeCost) {
+		document.getElementById("upgradeRock").disabled = false;
+	}
+}
+
+function set(){
+		document.getElementById("upgradeRock").disabled = true;	
+}
 
 function shakeTree() {
 	branches = branches + 1;
     document.getElementById("branches").innerHTML = branches;
+	if (branches >= robotRockCost) {
+		document.getElementById("buyRobotRock").disabled = false;
+	}	
 }
 
 function buyRobotRock(){
@@ -38,16 +56,19 @@ function buyRobotRock(){
 		robotRockCost = Math.floor(200* Math.pow(1.1,robotRock));
 		document.getElementById("robotRockCost").innerHTML = robotRockCost;			
 		document.getElementById("robotRock").innerHTML = robotRock;	
-		document.getElementById("branches").innerHTML = branches;	
-}		
+		document.getElementById("branches").innerHTML = branches;
+				if (branches < robotRockCost) {
+		document.getElementById("buyRobotRock").disabled = true;
+		}
+}
 }
 
 function autoRock(){
 	rockPoints = rockPoints + robotRock;
     document.getElementById("rockPoints").innerHTML = rockPoints;
 }	
-	
-	
+
 window.setInterval(function(){
 	autoRock();
+	afford();
 }, 1000);
