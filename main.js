@@ -60,6 +60,7 @@ function rockAntiCheat(){
 }
 		
 window.setInterval(function(){
-	antiCheat();
+	rockAntiCheat();
+	treeAntiCheat();
 	autoRock();
 }, 1000);
