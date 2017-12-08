@@ -3,11 +3,13 @@
 		<link rel="stylesheet" type="text/css" href="interface.css" />
 	</head>
 	<body>
-		<button onclick="increase(1)">Wrangle Rock (+1 Rock Points)</button>
+		<button onclick="wrangleRock()">Wrangle Rock (+<span id="rockSize">1</span> Rock Points)</button>
 		<br />
 		<button onclick="shakeTree()">Shake the Tree (+1 Branch)</button>
 		<br />
 		<button onclick="buyRobotRock()">Buy Wooden Robot Rock Wrangler (<span id="robotRockCost">200</span> Branches)</button>
+		<br />
+		<button onclick="upgradeRock()">Upgrade Rock (<span id="rockUpgradeCost">100</span> Rock Points</button>
 		<br />
 		Rock Points: <span id="rockPoints">0</span>
 		<br />
