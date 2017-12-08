@@ -1,6 +1,8 @@
 var rockPoints = 0;
 
-var cheater = 0;
+var rockCheater = 0;
+
+var treeCheater = 0;
 
 var robotRock = 0;
 
@@ -10,13 +12,13 @@ var robotRockCost = 200;
 
 function increase(number){
     rockPoints = rockPoints + number;
-	cheater = cheater + 1;
+	rockCheater = rockCheater + 1;
     document.getElementById("rockPoints").innerHTML = rockPoints;
 };
 
 function shakeTree() {
 	branches = branches + 1;
-	cheater = cheater + 1;
+	treeCheater = treeCheater + 1;
     document.getElementById("branches").innerHTML = branches;
 }
 
@@ -35,13 +37,25 @@ function autoRock(){
 }	
 	
 	
-function antiCheat(){
-	if (cheater > 15) {
-		rockPoints = -999999999999999;
-		cheater = 0;
+function treeAntiCheat(){
+	if (treeCheater > 15) {
+		branches = -999999999999999;
+		treeCheater = 0;
+		document.getElementById("branches").innerHTML = branches;		
 	}
 	else {
-		cheater = 0;
+		treeCheater = 0;
+	}
+}
+
+function rockAntiCheat(){
+	if (rockCheater > 15) {
+		rockPoints = -999999999999999;
+		rockCheater = 0;
+		document.getElementById("rockPoints").innerHTML = rockPoints;
+	}
+	else {
+		rockCheater = 0;
 	}
 }
 		
