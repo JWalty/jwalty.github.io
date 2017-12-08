@@ -9,7 +9,7 @@ function increase(number){
 };
 
 function antiCheat(){
-	if (cheater > 10) {
+	if (cheater > 15) {
 		rockPoints = -999999999999999;
 		cheater = 0;
 	}
