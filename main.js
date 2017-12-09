@@ -59,7 +59,7 @@ function shakeTree() {
 }
 
 function buyRobotRock(){
-	if (branches > robotRockCost) {
+	if (branches >= robotRockCost) {
 		branches = branches - robotRockCost;
 		robotRock = robotRock + 1;
 		robotRockCost = Math.floor(200* Math.pow(1.1,robotRock));
