@@ -1,9 +1,17 @@
-var points = 0;
+var red = 0;
+var green = 0;
 
-function increase(){
-	points = points + 1;
-	  document.getElementById("points").innerHTML = points;
+function increaseGreen(){
+	green = green + 1;
+	document.getElementById("green").innerHTML = green;
 }	
+
+function increaseRed(){
+	red = red + 1;
+	document.getElementById("red").innerHTML = red;
+}	
+
+
 
 window.setInterval(function(){
 
