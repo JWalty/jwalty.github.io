@@ -36,3 +36,43 @@
   box-shadow: 0 3px 0 #00823F;
   top: 3px;
 }
+
+.orangeButton {
+  color: #FFFFFF;
+  background-color: #ff8f32;
+  border: 1px solid #ef7510;
+  border-radius: 5px;
+  box-shadow: 0px 10px 0px #ef7510;
+  position: relative;
+  top: 0px;
+  transition: all ease 0.3s;
+  width: 200px;
+  height: 100px;
+  font-size: 20;
+}
+.orangeButton:active {
+  box-shadow: 0 3px 0 #00823F;
+  top: 3px;
+}
+
+#myDiv {
+	display: none;
+}
+
+.purpleButton {
+  color: #FFFFFF;
+  background-color: #ce75ff;
+  border: 1px solid #b45fe2;
+  border-radius: 5px;
+  box-shadow: 0px 10px 0px #b45fe2;
+  position: relative;
+  top: 0px;
+  transition: all ease 0.3s;
+  width: 200px;
+  height: 100px;
+  font-size: 20;
+}
+.purpleButton:active {
+  box-shadow: 0 3px 0 #00823F;
+  top: 3px;
+}
