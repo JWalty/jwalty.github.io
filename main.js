@@ -1,10 +1,20 @@
 var red = 0;
 var yellow = 0;
 var blue = 0;
-
 var purple = 0;
 var green = 0;
 var orange = 0;
+var redGenerators = 0;
+var redGeneratorCost = 10;
+
+function buyRedGenerator(){
+	if (red >= redGeneratorCost) {
+		red = red - redGeneratorCost;
+		redGenerators = redGenerators + 1;
+		document.getElementById("red").innerHTML = red;
+		document.getElementById("redGenerators").innerHTML = redGenerators;
+	}
+}
 
 function increaseBlue(){
 	blue = blue + 1;
@@ -58,6 +68,12 @@ function increaseRed(){
 	unlock();
 }
 
+function redGenerator(){
+	red = red + redGenerators;
+	document.getElementById("red").innerHTML = red;	
+	unlock();
+}
+
 function unlock(){
         if (red >= 10 && blue >= 10) {
 			purpleButton.style.display = "block";
@@ -73,5 +89,5 @@ function unlock(){
 
 
 window.setInterval(function(){
-
+redGenerator();
 }, 1000);
