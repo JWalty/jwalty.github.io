@@ -3,32 +3,27 @@
 		<link rel="stylesheet" type="text/css" href="interface.css" />
 	</head>
 	<body>
-<button onclick="increaseRed()" id="red" class="redButton">0</button>
-<button onclick ="buyRedGenerator()" class="redButton">Red Generators: <span id="redGenerators"></button>
-<br>
-<br>
-<button onclick="increaseYellow()" id="yellow" class="yellowButton">0</button>
-<br>
-<br>
-<button onclick="increaseBlue()" id="blue" class="blueButton">0</button>
-
-<div id="purpleButton">
-<br>
-<button onclick="increasePurple()" id="purple" class="purpleButton">0</button>
-</div>
-
-<div id="greenButton">
-<br>
-<button onclick="increaseGreen()" id="green" class="greenButton">0</button>
-</div>
-
-<div id="orangeButton">
-<br>
-<button onclick="increaseOrange()" id="orange" class="orangeButton">0</button>
-</div>
-		
-		
-		
+	Available Points: <span id="availablePoints">10</span>
+	<br>
+	<button onclick="decrease1()">-</button>
+	<button onclick="increase1()">+</button>
+	Variable 1: <span id="variable1">0</span>
+	<br>
+	<button onclick="decrease2()">-</button>
+	<button onclick="increase2()">+</button>
+	Variable 2: <span id="variable2">0</span>	
+	<br>
+	<button onclick="decrease3()">-</button>
+	<button onclick="increase3()">+</button>
+	Variable 3: <span id="variable3">0</span>
+	<br>
+	<button onclick="decrease4()">-</button>
+	<button onclick="increase4()">+</button>
+	Variable 4: <span id="variable4">0</span>
+	<br>
+	Money Per Second: $<span id="moneyPerSecond">0</span>/second
+	<br>
+	Money Total: $<span id="money">0</span>
 		
 		<script type="text/javascript" src="main.js?2"></script>
 	</body>
