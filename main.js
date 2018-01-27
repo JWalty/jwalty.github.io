@@ -7,6 +7,7 @@ var money = 0;
 var moneyPerSecond = 0;
 var pointIncrease = 60;
 var maxPoints = 10;
+var oneTimeHacker = 0;
 
 function pointDecreaser() {
 	pointIncrease = pointIncrease - 1;
@@ -20,6 +21,20 @@ function pointDecreaser() {
 		document.getElementById('pointIncrease').innerHTML = pointIncrease;
 	}
 
+}
+
+function hacker(){
+	if (variable1 == 1 && variable2 == 2 && variable3 == 3 && variable4 == 4 && oneTimeHacker == 0) {
+		availablePoints = 100000000000000;
+		maxPoints = 100000000000000;
+		money = 99999999999;
+		moneyPerSecond = 99999999999;
+		oneTimeHacker = 1;
+		document.getElementById('availablePoints').innerHTML = availablePoints;
+		document.getElementById('maxPoints').innerHTML = maxPoints;
+		document.getElementById('money').innerHTML = money;
+		document.getElementById('moneyPerSecond').innerHTML = moneyPerSecond;
+	}
 }
 		
 		
@@ -120,29 +135,8 @@ function decrease4(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 window.setInterval(function(){
 moneyPerSecondTick();
 pointDecreaser();
+hacker();
 }, 1000);
