@@ -5,6 +5,25 @@ var variable4 = 0;
 var availablePoints = 10;
 var money = 0;
 var moneyPerSecond = 0;
+var pointIncrease = 60;
+var maxPoints = 10;
+
+function pointDecreaser() {
+	pointIncrease = pointIncrease - 1;
+	document.getElementById('pointIncrease').innerHTML = pointIncrease;	
+	if (pointIncrease == 0) {
+		pointIncrease = 60;
+		maxPoints = maxPoints + 1;
+		availablePoints = availablePoints +1 ;
+		document.getElementById('maxPoints').innerHTML = maxPoints;
+		document.getElementById('availablePoints').innerHTML = availablePoints;
+		document.getElementById('pointIncrease').innerHTML = pointIncrease;
+	}
+
+}
+		
+		
+
 
 function moneyPerSecondTick() {
 	money = money + moneyPerSecond;
@@ -15,7 +34,6 @@ function moneyPerSecondCalc() {
 	moneyPerSecond = (variable1 * 1) + (variable2 * variable3) + (variable3 * 3) + (variable4 * variable1);
 	document.getElementById('moneyPerSecond').innerHTML = moneyPerSecond;
 }	
-
 
 function increase1(){
 	if (availablePoints > 0) {
@@ -57,10 +75,6 @@ function increase4(){
 	moneyPerSecondCalc()
 }
 }
-
-
-
-
 
 //decrease
 
@@ -113,6 +127,22 @@ function decrease4(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 window.setInterval(function(){
 moneyPerSecondTick();
+pointDecreaser();
 }, 1000);
