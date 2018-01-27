@@ -1,93 +1,118 @@
-var red = 0;
-var yellow = 0;
-var blue = 0;
-var purple = 0;
-var green = 0;
-var orange = 0;
-var redGenerators = 0;
-var redGeneratorCost = 10;
+var variable1 = 0;
+var variable2 = 0;
+var variable3 = 0;
+var variable4 = 0;
+var availablePoints = 10;
+var money = 0;
+var moneyPerSecond = 0;
 
-function buyRedGenerator(){
-	if (red >= redGeneratorCost) {
-		red = red - redGeneratorCost;
-		redGenerators = redGenerators + 1;
-		document.getElementById("red").innerHTML = red;
-		document.getElementById("redGenerators").innerHTML = redGenerators;
+function moneyPerSecondTick() {
+	money = money + moneyPerSecond;
+	document.getElementById('money').innerHTML = money;
+}
+
+function moneyPerSecondCalc() {
+	moneyPerSecond = (variable1 * 1) + (variable2 * 2) + (variable3 * 3) + (variable4 * 4);
+	document.getElementById('moneyPerSecond').innerHTML = moneyPerSecond;
+}	
+
+
+function increase1(){
+	if (availablePoints > 0) {
+	variable1 = variable1 + 1;
+	availablePoints = availablePoints - 1;
+	document.getElementById('variable1').innerHTML = variable1;
+	document.getElementById('availablePoints').innerHTML = availablePoints;	
+	moneyPerSecondCalc()
+}
+}
+
+function increase2(){
+	if (availablePoints > 0) {
+	variable2 = variable2 + 1;
+	availablePoints = availablePoints - 1;
+	document.getElementById('variable2').innerHTML = variable2;
+	document.getElementById('availablePoints').innerHTML = availablePoints;	
+	document.getElementById('moneyPerSecond').innerHTML = moneyPerSecond;		
+	moneyPerSecondCalc()
+}
+}
+
+function increase3(){
+	if (availablePoints > 0) {
+	variable3 = variable3 + 1;
+	availablePoints = availablePoints - 1;
+	document.getElementById('variable3').innerHTML = variable3;
+	document.getElementById('availablePoints').innerHTML = availablePoints;
+	moneyPerSecondCalc()
+}
+}
+
+function increase4(){
+	if (availablePoints > 0) {
+	variable4 = variable4 + 1;
+	availablePoints = availablePoints - 1;
+	document.getElementById('variable4').innerHTML = variable4;
+	document.getElementById('availablePoints').innerHTML = availablePoints;	
+	moneyPerSecondCalc()
+}
+}
+
+
+
+
+
+//decrease
+
+function decrease1(){
+	if (variable1 >= 1) {
+		variable1 = variable1 - 1;
+		availablePoints = availablePoints + 1;
+		document.getElementById('variable1').innerHTML = variable1;
+		document.getElementById('availablePoints').innerHTML = availablePoints;
+		moneyPerSecondCalc()		
 	}
 }
 
-function increaseBlue(){
-	blue = blue + 1;
-	document.getElementById("blue").innerHTML = blue;
-	unlock();		
-}	
-
-function increasePurple(){
-	if (red > 0 && blue > 0) {
-		red = red - 1;
-		blue = blue - 1;
-		purple = purple + 1;
-	document.getElementById("red").innerHTML = red;		
-	document.getElementById("blue").innerHTML = blue;
-	document.getElementById("purple").innerHTML = purple;	
+function decrease2(){
+	if (variable2 >= 1) {
+		variable2 = variable2 - 1;
+		availablePoints = availablePoints + 1;
+		document.getElementById('variable2').innerHTML = variable2;
+		document.getElementById('availablePoints').innerHTML = availablePoints;	
+		moneyPerSecondCalc()
 	}
-}	
-
-function increaseOrange(){
-	if (red > 0 && yellow > 0) {
-		red = red - 1;
-		yellow = yellow - 1;
-		orange = orange + 1;
-	document.getElementById("red").innerHTML = red;		
-	document.getElementById("yellow").innerHTML = yellow;
-	document.getElementById("orange").innerHTML = orange;	
-	}	
-}	
-
-function increaseGreen(){
-	if (yellow > 0 && blue > 0) {
-		yellow = yellow - 1;
-		blue = blue - 1;
-		green = green + 1;
-	document.getElementById("yellow").innerHTML = yellow;		
-	document.getElementById("blue").innerHTML = blue;
-	document.getElementById("green").innerHTML = green;	
-	}	
-}	
-
-function increaseYellow(){
-	yellow = yellow + 1;
-	document.getElementById("yellow").innerHTML = yellow;
-	unlock();	
-}	
-
-
-function increaseRed(){
-	red = red + 1;
-	document.getElementById("red").innerHTML = red;
-	unlock();
 }
 
-function redGenerator(){
-	red = red + redGenerators;
-	document.getElementById("red").innerHTML = red;	
-	unlock();
+function decrease3(){
+	if (variable3 >= 1) {
+		variable3 = variable3 - 1;
+		availablePoints = availablePoints + 1;
+		document.getElementById('variable3').innerHTML = variable3;
+		document.getElementById('availablePoints').innerHTML = availablePoints;	
+		moneyPerSecondCalc()
+	}
 }
 
-function unlock(){
-        if (red >= 10 && blue >= 10) {
-			purpleButton.style.display = "block";
-		}
-        if (red >= 10 && yellow >= 10) {
-			orangeButton.style.display = "block";
-		}
-        if (yellow >= 10 && blue >= 10) {
-			greenButton.style.display = "block";
-		}		
-		
+function decrease4(){
+	if (variable4 >= 1) {
+		variable4 = variable4 - 1;
+		availablePoints = availablePoints + 1;
+		document.getElementById('variable4').innerHTML = variable4;
+		document.getElementById('availablePoints').innerHTML = availablePoints;
+		moneyPerSecondCalc()
+	}
 }
+
+
+
+
+
+
+
+
 
 
 window.setInterval(function(){
-redGenerator();
+moneyPerSecondTick();
 }, 1000);
