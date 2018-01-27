@@ -1,11 +1,14 @@
-<html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="interface.css" />
-	</head>
-	<body>
-	<button onclick="myFunction()">button</button>
-	
-	
-		<script type="text/javascript" src="main.js?2"></script>
-	</body>
-</html>
+
+
+function myFunction() {
+    var btn = document.createElement("BUTTON");
+    var t = document.createTextNode("button");
+    btn.appendChild(t);
+    document.body.appendChild(btn);
+}
+
+
+
+//		document.getElementById('VARIABLE').innerHTML = VARIABLE;
+window.setInterval(function(){
+}, 1000);
