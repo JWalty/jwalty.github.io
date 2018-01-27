@@ -12,7 +12,7 @@ function moneyPerSecondTick() {
 }
 
 function moneyPerSecondCalc() {
-	moneyPerSecond = (variable1 * 1) + (variable2 * 2) + (variable3 * 3) + (variable4 * 4);
+	moneyPerSecond = (variable1 * 1) + (variable2 * variable3) + (variable3 * 3) + (variable4 * variable1);
 	document.getElementById('moneyPerSecond').innerHTML = moneyPerSecond;
 }	
 
