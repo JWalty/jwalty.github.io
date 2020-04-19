@@ -1,9 +1,4 @@
-body {
-	background-color: lightgrey;
-	text-align: center;
-	padding-top: 20px;
-}
-
-h1 {
-	font-family: neue-haas-grotesk-text, sans-serif; 
+span {
+	color: red;
+	font-size: 200;
 }
