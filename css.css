@@ -1,4 +1,19 @@
-span {
-	color: red;
-	font-size: 200;
+body {
+	background-color: #80bfff;
+	color: #fcfcfc;
+	font-family: Arial;
+}
+
+.test {
+	position: fixed;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+h3 {
+	font-size: 500%;
+
+	margin-bottom: 0px;
 }
